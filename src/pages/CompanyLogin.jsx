@@ -53,12 +53,12 @@ export default function CompanyLogin() {
           <div className="brand">
             <div className="brand-icon">🏗️</div>
             <div>
-              <div className="brand-name">APEXBUILD</div>
+              <div className="brand-name">DEMO BUILD</div>
               <div className="brand-sub">ENTERPRISE ERP</div>
             </div>
           </div>
 
-          <div className="panel-tag">APEXBUILD ENTERPRISE ERP</div>
+          <div className="panel-tag">DEMO BUILD ENTERPRISE ERP</div>
 
           <h2 className="panel-heading">
             Manage Projects, Workforce,<br />

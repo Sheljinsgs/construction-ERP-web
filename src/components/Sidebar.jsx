@@ -1,78 +1,81 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Sidebar.css';
+import { 
+  LayoutDashboard, Building, Globe, Factory, Users, Lock, 
+  FolderOpen, MapPin, HardHat, ClipboardCheck, Clock, 
+  Handshake, ShoppingCart, PaintBucket, Box, 
+  Banknote, Wallet, FileBarChart, Bell, Settings, LogOut 
+} from 'lucide-react';
 
 const NAV_GROUPS = [
   {
     label: 'GENERAL',
     items: [
-      { id: 'dashboard', icon: '⊞', label: 'Dashboard' },
+      { id: 'dashboard', icon: LayoutDashboard, label: 'Dashboard' },
     ],
   },
   {
     label: 'ORGANIZATION',
     items: [
-      { id: 'company',   icon: '🏢', label: 'Company Structure' },
-      { id: 'countries', icon: '🌍', label: 'Countries' },
-      { id: 'branches',  icon: '🏭', label: 'Branches' },
+      { id: 'company',   icon: Building, label: 'Company Structure' },
+      { id: 'countries', icon: Globe, label: 'Countries' },
+      { id: 'branches',  icon: Factory, label: 'Branches' },
     ],
   },
   {
     label: 'USERS',
     items: [
-      { id: 'users', icon: '👥', label: 'Users' },
-      { id: 'roles', icon: '🔐', label: 'Roles' },
+      { id: 'users', icon: Users, label: 'Users' },
+      { id: 'roles', icon: Lock, label: 'Roles' },
     ],
   },
   {
     label: 'PROJECTS',
     items: [
-      { id: 'projects', icon: '📁', label: 'Projects' },
-      { id: 'sites',    icon: '📍', label: 'Sites' },
+      { id: 'projects', icon: FolderOpen, label: 'Projects' },
+      { id: 'sites',    icon: MapPin, label: 'Sites' },
     ],
   },
   {
     label: 'WORKFORCE',
     items: [
-      { id: 'labour',     icon: '👷', label: 'Labour' },
-      { id: 'attendance', icon: '📋', label: 'Attendance' },
-      { id: 'overtime',   icon: '⏱️', label: 'Overtime' },
+      { id: 'labour',     icon: HardHat, label: 'Labour' },
+      { id: 'attendance', icon: ClipboardCheck, label: 'Attendance' },
+      { id: 'overtime',   icon: Clock, label: 'Overtime' },
     ],
   },
   {
     label: 'PROCUREMENT',
     items: [
-      { id: 'vendors',  icon: '🤝', label: 'Vendors' },
-      { id: 'purchase', icon: '🛒', label: 'Purchase Orders' },
+      { id: 'vendors',  icon: Handshake, label: 'Vendors' },
+      { id: 'purchase', icon: ShoppingCart, label: 'Purchase Orders' },
     ],
   },
   {
     label: 'INVENTORY',
     items: [
-      { id: 'materials', icon: '🧱', label: 'Materials' },
-      { id: 'stock',     icon: '📦', label: 'Stock Management' },
+      { id: 'materials', icon: PaintBucket, label: 'Materials' },
+      { id: 'stock',     icon: Box, label: 'Stock Management' },
     ],
   },
   {
     label: 'FINANCE',
     items: [
-      { id: 'expenses', icon: '💸', label: 'Expenses' },
-      { id: 'payroll',  icon: '💰', label: 'Payroll' },
+      { id: 'expenses', icon: Wallet, label: 'Expenses' },
+      { id: 'payroll',  icon: Banknote, label: 'Payroll' },
     ],
   },
   {
     label: 'SYSTEM',
     items: [
-      { id: 'reports',       icon: '📊', label: 'Reports' },
-      { id: 'notifications', icon: '🔔', label: 'Notifications' },
-      { id: 'settings',      icon: '⚙️',  label: 'Settings' },
+      { id: 'reports',       icon: FileBarChart, label: 'Reports' },
+      { id: 'notifications', icon: Bell, label: 'Notifications' },
+      { id: 'settings',      icon: Settings,  label: 'Settings' },
     ],
   },
 ];
 
 export default function Sidebar({ activeNav, setActiveNav, user, navigate }) {
-  const [collapsed, setCollapsed] = useState(false);
-
   const handleLogout = () => {
     localStorage.removeItem('erp_token');
     localStorage.removeItem('erp_user');
@@ -80,71 +83,66 @@ export default function Sidebar({ activeNav, setActiveNav, user, navigate }) {
   };
 
   return (
-    <aside className={`sidebar${collapsed ? ' sidebar--collapsed' : ''}`}>
+    <aside className="sidebar">
       {/* Brand */}
       <div className="sidebar-brand">
-        <div className="brand-logo">🏗️</div>
-        {!collapsed && (
-          <div className="brand-text">
-            <div className="brand-name">APEXBUILD</div>
-            <div className="brand-sub">ENTERPRISE ERP</div>
-          </div>
-        )}
-        <button className="collapse-btn" onClick={() => setCollapsed(c => !c)}>
-          {collapsed ? '›' : '‹'}
-        </button>
+        <div className="brand-logo">
+          <Building size={24} color="#3b82f6" />
+        </div>
+        <div className="brand-text">
+          <div className="brand-name">DEMO BUILD</div>
+          <div className="brand-sub">ENTERPRISE ERP</div>
+        </div>
       </div>
 
       {/* Company badge */}
-      {!collapsed && (
-        <div className="sidebar-company">
-          <div className="company-badge-s">
-            <div className="cb-avatar">CG</div>
-            <div className="cb-info">
-              <div className="cb-name">Classy Group</div>
-              <div className="cb-status"><span className="cb-dot" />Active</div>
-            </div>
+      <div className="sidebar-company">
+        <div className="company-badge-s">
+          <div className="cb-avatar">CG</div>
+          <div className="cb-info">
+            <div className="cb-name">Classy Group</div>
+            <div className="cb-status"><span className="cb-dot" />Active</div>
           </div>
         </div>
-      )}
+      </div>
 
       {/* Nav */}
       <nav className="sidebar-nav">
         {NAV_GROUPS.map(group => (
           <div key={group.label} className="nav-group">
-            {!collapsed && <div className="nav-group-label">{group.label}</div>}
-            {group.items.map(item => (
-              <button
-                key={item.id}
-                className={`nav-item${activeNav === item.id ? ' nav-item--active' : ''}`}
-                onClick={() => setActiveNav(item.id)}
-                title={collapsed ? item.label : ''}
-              >
-                <span className="nav-icon">{item.icon}</span>
-                {!collapsed && <span className="nav-label">{item.label}</span>}
-                {!collapsed && item.id === 'notifications' && (
-                  <span className="nav-badge">3</span>
-                )}
-              </button>
-            ))}
+            <div className="nav-group-label">{group.label}</div>
+            {group.items.map(item => {
+              const Icon = item.icon;
+              return (
+                <button
+                  key={item.id}
+                  className={`nav-item${activeNav === item.id ? ' nav-item--active' : ''}`}
+                  onClick={() => setActiveNav(item.id)}
+                >
+                  <span className="nav-icon"><Icon size={18} /></span>
+                  <span className="nav-label">{item.label}</span>
+                  {item.id === 'notifications' && (
+                    <span className="nav-badge">3</span>
+                  )}
+                </button>
+              );
+            })}
           </div>
         ))}
       </nav>
 
       {/* User bottom */}
       <div className="sidebar-user">
-        {!collapsed ? (
-          <div className="sidebar-user-row">
-            <div className="su-avatar">{user?.avatar || 'JC'}</div>
-            <div className="su-info">
-              <div className="su-name">{user?.name || 'Jennifer Cole'}</div>
-              <div className="su-role">{user?.role || 'Company Administrator'}</div>
-            </div>
-            <button className="su-logout" onClick={handleLogout} title="Logout">↪</button>
+        <div className="sidebar-user-row">
+          <div className="su-avatar">{user?.avatar || 'JC'}</div>
+          <div className="su-info">
+            <div className="su-name">{user?.name || 'Jennifer Cole'}</div>
+            <div className="su-role">{user?.role || 'Company Administrator'}</div>
           </div>
-        ) : (
-          <button className="su-logout-mini" onClick={handleLogout} title="Logout">↪</button>
-        )}
+          <button className="su-logout" onClick={handleLogout} title="Logout">
+            <LogOut size={18} />
+          </button>
+        </div>
       </div>
     </aside>
   );

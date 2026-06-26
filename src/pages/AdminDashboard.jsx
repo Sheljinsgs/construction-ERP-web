@@ -17,7 +17,7 @@ import AdminUsageAnalytics from './AdminUsageAnalytics';
 import AdminRevenueAnalytics from './AdminRevenueAnalytics';
 import AdminSupportTickets from './AdminSupportTickets';
 import AdminMaintenance from './AdminMaintenance';
-import { getPlatformStats, getHealth } from '../api/client';
+import { getPlatformStats, getHealth, verifyAdminSession, adminLogout } from '../api/client';
 import './AdminDashboard.css';
 
 /* ─── Static mock data ─────────────────────────────────────────── */
@@ -341,22 +341,37 @@ export default function AdminDashboard() {
 
   useEffect(() => {
     const token = localStorage.getItem('erp_token');
-    if (!token) navigate('/super-admin/login', { replace: true });
+    if (!token) {
+      navigate('/super-admin/login', { replace: true });
+      return;
+    }
+    // Verify session is still valid
+    verifyAdminSession()
+      .then(() => {
+        // Session valid — load dashboard data
+        getPlatformStats()
+          .then(res => setStats(res.data.stats))
+          .catch(() => setStats({
+            totalCompanies: 148, activeRealms: 132, totalWorkforce: 12480,
+            activeSessions: 3842, platformHealth: '99.98%',
+          }));
+        getHealth().catch(() => {});
+      })
+      .catch(() => {
+        // Session expired or invalid
+        localStorage.removeItem('erp_token');
+        localStorage.removeItem('erp_admin');
+        navigate('/super-admin/login', { replace: true });
+      });
   }, [navigate]);
 
-  useEffect(() => {
-    getPlatformStats()
-      .then(res => setStats(res.data.stats))
-      .catch(() => setStats({
-        totalCompanies: 148, activeRealms: 132, totalWorkforce: 12480,
-        activeSessions: 3842, platformHealth: '99.98%',
-      }));
-    getHealth().catch(() => {});
-  }, []);
-
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    try {
+      await adminLogout();
+    } catch (_) { /* ignore */ }
     localStorage.removeItem('erp_token');
     localStorage.removeItem('erp_admin');
+    localStorage.removeItem('erp_stay_verified');
     navigate('/super-admin/login');
   };
 

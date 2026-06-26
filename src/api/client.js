@@ -17,21 +17,40 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// Company login
+// Auto-handle 401 responses (expired/invalid tokens)
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      const isAdminRoute = error.config?.url?.includes('/admin/');
+      // Don't auto-redirect on login attempts
+      const isLoginRoute = error.config?.url?.includes('/login');
+      if (!isLoginRoute && isAdminRoute) {
+        localStorage.removeItem('erp_token');
+        localStorage.removeItem('erp_admin');
+        window.location.href = '/super-admin/login';
+      }
+    }
+    return Promise.reject(error);
+  }
+);
+
+// ── Company Auth ─────────────────────────────────────────────────────
 export const companyLogin = (data) => api.post('/auth/login', data);
 
-// Super admin login
+// ── Super Admin Auth ─────────────────────────────────────────────────
 export const adminLogin = (data) => api.post('/admin/login', data);
+export const verifyAdminSession = () => api.get('/admin/verify-session');
+export const adminLogout = () => api.post('/admin/logout');
 
-// Platform health
+// ── Platform ─────────────────────────────────────────────────────────
 export const getHealth = () => api.get('/health');
-
-// Platform stats
 export const getPlatformStats = () => api.get('/admin/platform-stats');
 
-// Admin dashboard data
+// ── Admin Dashboard Data ─────────────────────────────────────────────
 export const getAdminCompanies     = () => api.get('/admin/companies');
 export const getRecentActivity     = () => api.get('/admin/recent-activity');
 export const getSupportTickets     = () => api.get('/admin/support-tickets');
 
 export default api;
+

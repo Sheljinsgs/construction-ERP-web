@@ -163,7 +163,7 @@ export default function SplashScreen({ target }) {
       {/* Bottom bar */}
       <footer className="splash__footer">
         <div className="footer-left">
-          <span>APEXBUILD SYSTEMS CO.</span>
+          <span>DEMO BUILD SYSTEMS CO.</span>
           <span className="footer-sep">•</span>
           <span>SECURE PLATFORM ENCRYPTED</span>
         </div>
