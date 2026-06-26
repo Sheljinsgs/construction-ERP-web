@@ -1,0 +1,91 @@
+.aff-container { display: flex; flex-direction: column; gap: 16px; height: 100%; position: relative; padding-bottom: 60px; }
+
+/* ── Header ────────────────────────────────────────────── */
+.aff-header { display: flex; align-items: flex-start; justify-content: space-between; flex-shrink: 0; }
+.aff-breadcrumb { display: flex; align-items: center; gap: 5px; font-size: 11.5px; color: #94a3b8; margin-bottom: 4px; }
+.aff-bc-sep { opacity: 0.5; }
+.aff-title { font-size: 22px; font-weight: 800; color: #0f172a; margin: 0 0 3px; }
+.aff-sub { font-size: 12.5px; color: #64748b; }
+.aff-header-actions { display: flex; gap: 10px; }
+
+.aff-btn-outline { padding: 9px 16px; border: 1px solid #e2e8f0; border-radius: 8px; background: #fff; font-size: 12.5px; font-weight: 600; color: #475569; cursor: pointer; transition: all 0.15s; font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 6px; }
+.aff-btn-outline:hover { background: #f8fafc; color: #0f172a; }
+.aff-btn-outline--dark { background: transparent; border-color: rgba(255,255,255,0.2); color: #fff; }
+.aff-btn-outline--dark:hover { background: rgba(255,255,255,0.1); color: #fff; }
+
+.aff-btn-primary { padding: 9px 16px; border: none; border-radius: 8px; background: linear-gradient(135deg, #0d1117, #1e293b); color: #fff; font-size: 12.5px; font-weight: 700; cursor: pointer; transition: all 0.15s; font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+.aff-btn-primary:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+/* ── Company Panel ─────────────────────────────────────── */
+.aff-company-panel { display: flex; justify-content: space-between; align-items: center; background: #fff; border-radius: 14px; border: 1px solid #e8edf5; padding: 16px 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.02); flex-shrink: 0; flex-wrap: wrap; gap: 16px; }
+
+.aff-company-left { flex: 1; min-width: 300px; }
+.aff-company-dropdown { display: flex; align-items: center; gap: 12px; cursor: pointer; }
+.aff-company-avatar { width: 40px; height: 40px; border-radius: 50%; background: #fde68a; color: #d97706; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; flex-shrink: 0; }
+.aff-company-info { flex: 1; }
+.aff-company-name { font-size: 15px; font-weight: 800; color: #0f172a; }
+.aff-company-plan { font-size: 12px; color: #64748b; margin-top: 2px; }
+.aff-dropdown-icon { color: #94a3b8; font-size: 16px; }
+
+.aff-company-right { display: flex; gap: 12px; }
+.aff-stat-pill { display: flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 10px; border: 1px solid transparent; }
+.aff-stat-icon { font-size: 16px; display: flex; align-items: center; justify-content: center; }
+.aff-stat-text { display: flex; align-items: baseline; gap: 6px; }
+.aff-stat-val { font-size: 18px; font-weight: 900; line-height: 1; }
+.aff-stat-lbl { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.aff-stat-pill--enabled { background: rgba(34,197,94,0.05); border-color: rgba(34,197,94,0.2); }
+.aff-stat-pill--enabled .aff-stat-val { color: #16a34a; }
+.aff-stat-pill--enabled .aff-stat-lbl { color: #15803d; }
+
+.aff-stat-pill--disabled { background: rgba(59,130,246,0.05); border-color: rgba(59,130,246,0.2); }
+.aff-stat-pill--disabled .aff-stat-val { color: #2563eb; }
+.aff-stat-pill--disabled .aff-stat-lbl { color: #1d4ed8; }
+
+.aff-stat-pill--total { background: rgba(245,166,35,0.05); border-color: rgba(245,166,35,0.2); }
+.aff-stat-pill--total .aff-stat-val { color: #d97706; }
+.aff-stat-pill--total .aff-stat-lbl { color: #b45309; }
+
+/* ── Flags Grid ──────────────────────────────────────── */
+.aff-flags-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; overflow-y: auto; padding-bottom: 20px; }
+
+.aff-cat-card { background: #fff; border-radius: 14px; border: 1px solid #e8edf5; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.02); }
+
+.aff-cat-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid #f1f4f9; }
+.aff-cat-title-wrap { display: flex; align-items: center; gap: 8px; }
+.aff-cat-icon { font-size: 18px; }
+.aff-cat-title { font-size: 15px; font-weight: 800; color: #0f172a; margin: 0; }
+
+.aff-cat-progress { font-size: 11px; font-weight: 700; color: #94a3b8; }
+
+.aff-flag-list { display: flex; flex-direction: column; gap: 16px; }
+.aff-flag-item { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+
+.aff-flag-info { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+.aff-flag-title-row { display: flex; align-items: center; gap: 8px; }
+.aff-flag-name { font-size: 13.5px; font-weight: 700; color: #0f172a; }
+.aff-flag-name--disabled { color: #64748b; }
+.aff-flag-desc { font-size: 12px; color: #64748b; line-height: 1.4; }
+
+.aff-badge { font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 4px; letter-spacing: 0.05em; display: inline-block; white-space: nowrap; }
+.aff-badge--beta { background: rgba(139,92,246,0.1); color: #7c3aed; }
+.aff-badge--experimental { background: rgba(239,68,68,0.1); color: #dc2626; }
+.aff-badge--enterprise { background: #0f172a; color: #f5a623; }
+.aff-badge--premium { background: rgba(245,166,35,0.15); color: #d97706; }
+.aff-badge--new { background: rgba(34,197,94,0.15); color: #16a34a; }
+
+.aff-flag-ctrl { flex-shrink: 0; }
+
+.aff-toggle { width: 40px; height: 22px; border-radius: 11px; background: #e2e8f0; border: none; cursor: pointer; position: relative; transition: background 0.2s; padding: 0; }
+.aff-toggle--on { background: #f5a623; }
+.aff-toggle-knob { position: absolute; top: 2px; left: 2px; width: 18px; height: 18px; border-radius: 50%; background: #fff; transition: transform 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+.aff-toggle--on .aff-toggle-knob { transform: translateX(18px); }
+
+/* ── Footer Banner ─────────────────────────────────────── */
+.aff-footer-banner { position: absolute; bottom: 0; left: 0; right: 0; background: #0d1117; padding: 14px 20px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 -4px 16px rgba(0,0,0,0.15); z-index: 10; animation: slideUp 0.3s ease forwards; }
+
+.aff-footer-info { display: flex; align-items: center; gap: 16px; }
+.aff-footer-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(139,92,246,0.15); display: flex; align-items: center; justify-content: center; font-size: 16px; border: 1px solid rgba(139,92,246,0.3); }
+.aff-footer-title { font-size: 14px; font-weight: 800; color: #fff; margin-bottom: 3px; }
+.aff-footer-desc { font-size: 12px; color: #94a3b8; }
+.aff-footer-actions { display: flex; gap: 10px; flex-shrink: 0; }

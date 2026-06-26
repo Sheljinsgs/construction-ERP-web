@@ -1,0 +1,103 @@
+.amn-container { display: flex; flex-direction: column; gap: 16px; height: 100%; }
+
+.amn-header { display: flex; align-items: flex-start; justify-content: space-between; flex-shrink: 0; }
+.amn-breadcrumb { display: flex; align-items: center; gap: 5px; font-size: 11.5px; color: #94a3b8; margin-bottom: 4px; }
+.amn-bc-sep { opacity: 0.5; }
+.amn-title { font-size: 22px; font-weight: 800; color: #0f172a; margin: 0 0 3px; }
+.amn-sub { font-size: 12.5px; color: #64748b; }
+
+.amn-create-btn {
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #0d1117, #1e293b);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: all 0.15s;
+}
+.amn-create-btn:hover { transform: translateY(-1px); filter: brightness(1.1); }
+
+.amn-body {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 16px;
+  flex: 1;
+  min-height: 0;
+}
+
+.amn-left { display: flex; flex-direction: column; gap: 16px; }
+.amn-right { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+
+.amn-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e8edf5;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.amn-card-title { font-size: 15px; font-weight: 800; color: #0f172a; margin: 0 0 16px 0; }
+.amn-card-desc { font-size: 12.5px; color: #64748b; margin: -8px 0 16px 0; line-height: 1.5; }
+
+/* Health Card */
+.amn-health-status { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding: 16px; background: #f8fafc; border-radius: 12px; border: 1px solid #f1f4f9; }
+.amn-health-icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; color: #fff; }
+.amn-health-icon--good { background: #22c55e; box-shadow: 0 0 0 4px rgba(34,197,94,0.15); }
+.amn-health-main { font-size: 14px; font-weight: 800; color: #0f172a; }
+.amn-health-sub { font-size: 11.5px; color: #64748b; margin-top: 2px; }
+
+.amn-health-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.amn-health-item { display: flex; flex-direction: column; gap: 4px; padding: 12px; border: 1px solid #e8edf5; border-radius: 10px; }
+.amn-health-lbl { font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; }
+.amn-health-val { font-size: 16px; font-weight: 800; }
+.amn-health-val--up { color: #16a34a; }
+
+/* Alert Form */
+.amn-alert-form { display: flex; flex-direction: column; gap: 10px; }
+.amn-input { border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 12px; font-size: 13px; font-family: 'Inter', sans-serif; outline: none; }
+.amn-textarea { border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; font-size: 13px; font-family: 'Inter', sans-serif; resize: none; outline: none; }
+.amn-input:focus, .amn-textarea:focus { border-color: #f5a623; }
+.amn-btn { padding: 10px 16px; border: none; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.15s; font-family: 'Inter', sans-serif; }
+.amn-btn--full { width: 100%; background: #0f172a; color: #fff; }
+.amn-btn--full:hover { background: #1e293b; }
+.amn-btn--sm { padding: 6px 12px; font-size: 12px; background: #f1f4f9; color: #334155; }
+.amn-btn--sm:hover { background: #e2e8f0; }
+
+/* Schedule */
+.amn-schedule-card { display: flex; flex-direction: column; height: 100%; }
+.amn-schedule-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.amn-tabs { display: flex; gap: 4px; background: #f1f4f9; padding: 4px; border-radius: 8px; }
+.amn-tab { padding: 6px 12px; border: none; background: none; border-radius: 6px; font-size: 12px; font-weight: 600; color: #64748b; cursor: pointer; }
+.amn-tab:hover { color: #334155; }
+.amn-tab--active { background: #fff; color: #0f172a; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+
+.amn-schedule-list { display: flex; flex-direction: column; gap: 12px; overflow-y: auto; }
+.amn-schedule-item { display: flex; gap: 16px; padding: 16px; border: 1px solid #e8edf5; border-radius: 12px; transition: all 0.15s; }
+.amn-schedule-item:hover { border-color: #cbd5e1; box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
+
+.amn-schedule-date-col { width: 140px; flex-shrink: 0; border-right: 1px solid #f1f4f9; padding-right: 16px; }
+.amn-schedule-date { font-size: 13px; font-weight: 800; color: #0f172a; margin-bottom: 4px; }
+.amn-schedule-time { font-size: 11.5px; color: #64748b; line-height: 1.4; }
+
+.amn-schedule-body { flex: 1; min-width: 0; }
+.amn-schedule-top { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+.amn-schedule-title { font-size: 14px; font-weight: 800; color: #0f172a; margin: 0; }
+
+.amn-badge { font-size: 9.5px; font-weight: 700; padding: 2px 8px; border-radius: 5px; text-transform: uppercase; letter-spacing: 0.05em; }
+.amn-badge--routine { background: rgba(59,130,246,0.1); color: #2563eb; }
+.amn-badge--infrastructure { background: rgba(245,166,35,0.1); color: #d97706; }
+.amn-badge--security { background: rgba(239,68,68,0.1); color: #dc2626; }
+.amn-badge--impact-low { background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0; }
+.amn-badge--impact-medium { background: rgba(245,166,35,0.05); color: #d97706; border: 1px solid rgba(245,166,35,0.2); }
+.amn-badge--impact-high { background: rgba(239,68,68,0.05); color: #dc2626; border: 1px solid rgba(239,68,68,0.2); }
+
+.amn-schedule-desc { font-size: 13px; color: #475569; line-height: 1.5; margin: 0; }
+
+.amn-schedule-actions { display: flex; gap: 6px; flex-shrink: 0; }
+.amn-icon-btn { width: 32px; height: 32px; border: 1px solid #e2e8f0; border-radius: 8px; background: #fff; color: #475569; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px; transition: all 0.15s; }
+.amn-icon-btn:hover { background: #f8fafc; color: #0f172a; }
+.amn-icon-btn--danger:hover { background: rgba(239,68,68,0.1); color: #dc2626; border-color: rgba(239,68,68,0.2); }

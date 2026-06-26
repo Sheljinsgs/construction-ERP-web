@@ -1,0 +1,51 @@
+/* ═══════════════════════════════════════════════════════════════════
+   ConstructERP – Global Styles
+   ═══════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Colors */
+  --clr-bg:          #080c14;
+  --clr-bg2:         #0d1422;
+  --clr-surface:     #111827;
+  --clr-surface2:    #1a2234;
+  --clr-border:      rgba(255,255,255,0.08);
+  --clr-border2:     rgba(255,255,255,0.14);
+
+  --clr-gold:        #f5a623;
+  --clr-gold-light:  #ffc653;
+  --clr-teal:        #00e5b0;
+  --clr-teal-dark:   #00b890;
+  --clr-blue:        #3b82f6;
+  --clr-blue-dark:   #2563eb;
+  --clr-red:         #ef4444;
+  --clr-orange:      #f97316;
+
+  --clr-text:        #f1f5f9;
+  --clr-text-muted:  #8892a4;
+  --clr-text-dim:    #4b5563;
+
+  /* Typography */
+  --font-main:  'Inter', system-ui, sans-serif;
+  --font-mono:  'JetBrains Mono', monospace;
+
+  /* Transitions */
+  --tx-fast:   0.15s ease;
+  --tx-med:    0.3s ease;
+  --tx-slow:   0.5s ease;
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: var(--font-main);
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--clr-bg); }
+::-webkit-scrollbar-thumb { background: var(--clr-surface2); border-radius: 99px; }

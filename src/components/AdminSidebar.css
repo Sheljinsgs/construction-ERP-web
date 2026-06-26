@@ -1,0 +1,296 @@
+/* ═══════════════════════════════════════════════════════════
+   AdminSidebar.css — Super Admin Navigation
+   ═══════════════════════════════════════════════════════════ */
+
+.admin-sidebar {
+  width: 220px;
+  min-width: 220px;
+  background: #0d1117;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  transition: width 0.22s cubic-bezier(.4,0,.2,1), min-width 0.22s;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+  z-index: 10;
+}
+
+.admin-sidebar--collapsed {
+  width: 60px;
+  min-width: 60px;
+}
+
+/* ── Brand ──────────────────────────────────────────────── */
+.asb-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 14px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  flex-shrink: 0;
+}
+
+.asb-logo {
+  font-size: 22px;
+  flex-shrink: 0;
+  width: 32px;
+  text-align: center;
+}
+
+.asb-brand-text { flex: 1; min-width: 0; }
+
+.asb-brand-name {
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.asb-brand-sub {
+  font-size: 9.5px;
+  color: #f5a623;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.asb-collapse-btn {
+  background: rgba(255,255,255,0.07);
+  border: none;
+  color: #94a3b8;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s, color 0.15s;
+  line-height: 1;
+  padding: 0;
+}
+.asb-collapse-btn:hover { background: rgba(255,255,255,0.13); color: #fff; }
+
+/* ── Nav ────────────────────────────────────────────────── */
+.asb-nav {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 6px 0 6px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.08) transparent;
+}
+.asb-nav::-webkit-scrollbar { width: 4px; }
+.asb-nav::-webkit-scrollbar-track { background: transparent; }
+.asb-nav::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 4px; }
+
+.asb-group { margin-bottom: 4px; }
+
+.asb-group-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #475569;
+  letter-spacing: 0.08em;
+  padding: 8px 14px 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.asb-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 7px 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  border-radius: 0;
+  transition: background 0.13s;
+  position: relative;
+  text-align: left;
+}
+.asb-item:hover { background: rgba(255,255,255,0.05); }
+
+.asb-item--active {
+  background: rgba(245,166,35,0.12) !important;
+}
+.asb-item--active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: #f5a623;
+}
+
+.asb-item-icon {
+  font-size: 15px;
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+}
+
+.asb-item-label {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #94a3b8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  transition: color 0.13s;
+}
+.asb-item--active .asb-item-label { color: #f5a623; font-weight: 600; }
+.asb-item:hover .asb-item-label { color: #cbd5e1; }
+
+.asb-item-badge {
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(245,166,35,0.2);
+  color: #f5a623;
+  padding: 1px 7px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+/* ── Platform monitor ───────────────────────────────────── */
+.asb-monitor {
+  padding: 8px 10px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  flex-shrink: 0;
+}
+
+.asb-monitor-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(34,197,94,0.07);
+  border: 1px solid rgba(34,197,94,0.15);
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+
+.asb-monitor-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px #22c55e;
+  animation: pulse-green 2s infinite;
+}
+@keyframes pulse-green {
+  0%,100% { box-shadow: 0 0 4px #22c55e; }
+  50% { box-shadow: 0 0 10px #22c55e; }
+}
+
+.asb-monitor-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #e2e8f0;
+  white-space: nowrap;
+}
+
+.asb-monitor-sub {
+  font-size: 10px;
+  color: #22c55e;
+  white-space: nowrap;
+}
+
+/* ── User bottom ────────────────────────────────────────── */
+.asb-user {
+  padding: 10px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  flex-shrink: 0;
+}
+
+.asb-user-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.asb-user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#f5a623,#d97706);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.asb-user-info { flex: 1; min-width: 0; }
+
+.asb-user-name {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #e2e8f0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.asb-user-role {
+  font-size: 10px;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.asb-user-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+}
+
+.asb-logout-btn {
+  background: rgba(255,255,255,0.05);
+  border: none;
+  color: #64748b;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s, color 0.15s;
+}
+.asb-logout-btn:hover { background: rgba(239,68,68,0.15); color: #ef4444; }
+
+.asb-logout-mini {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: background 0.15s, color 0.15s;
+}
+.asb-logout-mini:hover { background: rgba(239,68,68,0.15); color: #ef4444; }

@@ -1,0 +1,47 @@
+.proj-table { display: flex; flex-direction: column; gap: 12px; }
+
+.proj-row {
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr 1.2fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f4f9;
+}
+.proj-row:last-child { border-bottom: none; }
+
+.proj-name {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.proj-meta { display: flex; gap: 8px; margin-top: 3px; }
+.proj-crews { font-size: 11px; color: #94a3b8; }
+
+.proj-progress-col,
+.proj-budget-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.proj-prog-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.proj-prog-label {
+  font-size: 10px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.proj-prog-val {
+  font-size: 11px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.proj-status-col { display: flex; align-items: center; justify-content: flex-end; }

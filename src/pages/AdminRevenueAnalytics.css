@@ -1,0 +1,128 @@
+.ara-container { display: flex; flex-direction: column; gap: 16px; height: 100%; overflow-y: auto; padding-right: 4px; padding-bottom: 20px; }
+.ara-container::-webkit-scrollbar { width: 4px; }
+.ara-container::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 4px; }
+
+/* ── Header ────────────────────────────────────────────── */
+.ara-header { display: flex; align-items: flex-start; justify-content: space-between; flex-shrink: 0; }
+.ara-breadcrumb { display: flex; align-items: center; gap: 5px; font-size: 11.5px; color: #94a3b8; margin-bottom: 4px; }
+.ara-bc-sep { opacity: 0.5; }
+.ara-title { font-size: 22px; font-weight: 800; color: #0f172a; margin: 0 0 3px; }
+.ara-sub { font-size: 12.5px; color: #64748b; margin: 0; }
+.ara-header-actions { display: flex; gap: 10px; align-items: center; }
+
+.ara-tabs { display: flex; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 3px; }
+.ara-tab { padding: 6px 14px; border: none; background: transparent; border-radius: 6px; font-size: 12px; font-weight: 700; color: #64748b; cursor: pointer; transition: all 0.15s; font-family: 'Inter', sans-serif; }
+.ara-tab:hover { color: #0f172a; }
+.ara-tab--active { background: #f5a623; color: #fff; }
+.ara-tab--active:hover { color: #fff; }
+
+.ara-btn-outline { padding: 9px 16px; border: 1px solid #e2e8f0; border-radius: 8px; background: #fff; font-size: 12.5px; font-weight: 600; color: #475569; cursor: pointer; transition: all 0.15s; font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 6px; }
+.ara-btn-outline:hover { background: #f8fafc; color: #0f172a; }
+
+/* ── KPI Grid ──────────────────────────────────────────── */
+.ara-kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; flex-shrink: 0; }
+.ara-kpi-card { display: flex; align-items: center; gap: 16px; padding: 20px; background: #fff; border-radius: 14px; border: 1px solid #e8edf5; box-shadow: 0 1px 4px rgba(0,0,0,0.02); }
+.ara-kpi-card--dark { background: #0f172a; border-color: #0f172a; color: #fff; box-shadow: 0 4px 12px rgba(15,23,42,0.2); }
+
+.ara-kpi-icon-col { flex-shrink: 0; }
+.ara-kpi-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(245,166,35,0.1); color: #f5a623; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+
+.ara-kpi-content { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.ara-kpi-val { font-size: 24px; font-weight: 900; line-height: 1; color: #0f172a; }
+.ara-kpi-card--dark .ara-kpi-val { color: #fff; }
+.ara-kpi-title { font-size: 10px; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+.ara-kpi-card--dark .ara-kpi-title { color: #94a3b8; }
+.ara-kpi-sub { font-size: 11px; color: #94a3b8; font-weight: 600; }
+
+.ara-kpi-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.ara-kpi-delta { font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 4px; }
+.ara-kpi-delta--up { background: rgba(34,197,94,0.1); color: #16a34a; }
+.ara-kpi-badge { font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 4px; }
+.ara-kpi-badge--warn { background: rgba(245,166,35,0.1); color: #d97706; }
+.ara-kpi-badge--danger { background: rgba(239,68,68,0.1); color: #dc2626; }
+.ara-kpi-badge--danger-text { background: rgba(239,68,68,0.1); color: #ef4444; }
+
+/* ── Rows & Cards ──────────────────────────────────────── */
+.ara-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; flex-shrink: 0; }
+.ara-card { background: #fff; border-radius: 14px; border: 1px solid #e8edf5; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.02); display: flex; flex-direction: column; }
+
+.ara-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+.ara-card-title { font-size: 14px; font-weight: 800; color: #0f172a; margin: 0 0 2px 0; }
+.ara-card-sub { font-size: 11px; font-weight: 600; color: #94a3b8; }
+
+/* ── Monthly Revenue ───────────────────────────────────── */
+.ara-chart-bars { display: flex; align-items: flex-end; gap: 4px; height: 140px; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; margin-bottom: 8px; }
+.ara-bar { flex: 1; background: #e2e8f0; border-radius: 2px 2px 0 0; }
+.ara-bar--highlight { background: #0f172a; }
+.ara-chart-labels { display: flex; justify-content: space-between; font-size: 10px; font-weight: 600; color: #94a3b8; margin-bottom: 16px; }
+.ara-chart-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px dashed #e2e8f0; }
+.ara-cf-lbl { font-size: 12px; color: #64748b; font-weight: 600; }
+.ara-cf-val { font-size: 18px; font-weight: 900; color: #0f172a; }
+
+/* ── Revenue by Plan ───────────────────────────────────── */
+.ara-stacked-chart { display: flex; justify-content: space-between; height: 140px; margin-bottom: 16px; }
+.ara-st-col { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 32px; }
+.ara-st-bars { flex: 1; width: 100%; display: flex; flex-direction: column-reverse; gap: 2px; }
+.ara-st-bar { width: 100%; border-radius: 2px; }
+.ara-st-bar--ent { background: #0f172a; }
+.ara-st-bar--pro { background: #f5a623; }
+.ara-st-bar--bas { background: #e2e8f0; }
+.ara-st-lbl { font-size: 10px; font-weight: 600; color: #94a3b8; }
+
+.ara-legend { display: flex; justify-content: center; gap: 16px; font-size: 11px; font-weight: 600; color: #475569; }
+.ara-lg-item { display: flex; align-items: center; gap: 6px; }
+.ara-lg-dot { width: 8px; height: 8px; border-radius: 50%; }
+.ara-lg-dot--ent { background: #0f172a; }
+.ara-lg-dot--pro { background: #f5a623; }
+.ara-lg-dot--bas { background: #e2e8f0; }
+
+/* ── Revenue by Country ────────────────────────────────── */
+.ara-country-list { display: flex; flex-direction: column; gap: 12px; }
+.ara-c-row { display: flex; align-items: center; gap: 10px; }
+.ara-c-code { font-size: 10px; font-weight: 800; color: #94a3b8; width: 20px; }
+.ara-c-name { font-size: 12px; font-weight: 600; color: #475569; width: 40px; }
+.ara-c-bar-wrap { flex: 1; height: 6px; background: #f1f4f9; border-radius: 3px; overflow: hidden; }
+.ara-c-bar { height: 100%; border-radius: 3px; }
+.ara-c-val { font-size: 12px; font-weight: 800; color: #0f172a; width: 50px; text-align: right; }
+
+/* ── Top Paying Clients ────────────────────────────────── */
+.ara-tpc-list { display: flex; flex-direction: column; gap: 16px; }
+.ara-tpc-row { display: flex; align-items: center; gap: 12px; }
+.ara-tpc-avatar { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; flex-shrink: 0; }
+.ara-tpc-info { flex: 1; min-width: 0; }
+.ara-tpc-name { font-size: 13px; font-weight: 700; color: #0f172a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 2px; }
+.ara-tpc-plan { font-size: 11px; color: #64748b; }
+.ara-tpc-right { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; flex-shrink: 0; }
+.ara-tpc-val { font-size: 13px; font-weight: 800; color: #0f172a; }
+.ara-tpc-status { font-size: 10px; font-weight: 800; color: #16a34a; text-transform: uppercase; }
+.ara-tpc-status--err { color: #dc2626; }
+
+/* ── Upcoming Renewals ─────────────────────────────────── */
+.ara-ur-list { display: flex; flex-direction: column; gap: 16px; flex: 1; }
+.ara-ur-row { display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 1px solid #f1f4f9; }
+.ara-ur-info { display: flex; flex-direction: column; gap: 4px; }
+.ara-ur-name { font-size: 13px; font-weight: 700; color: #0f172a; }
+.ara-ur-date { font-size: 11.5px; font-weight: 600; color: #dc2626; }
+.ara-ur-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.ara-ur-val { font-size: 13px; font-weight: 800; color: #0f172a; }
+.ara-btn-sm { padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; cursor: pointer; transition: all 0.15s; font-family: 'Inter', sans-serif; }
+.ara-btn-sm--outline { background: #fff; border: 1px solid #f5a623; color: #d97706; }
+.ara-btn-sm--outline:hover { background: #f5a623; color: #fff; }
+
+.ara-ur-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; margin-top: auto; }
+.ara-ur-f-lbl { font-size: 12px; color: #64748b; font-weight: 600; }
+.ara-ur-f-val { font-size: 16px; font-weight: 900; color: #0f172a; }
+
+/* ── Outstanding Payments ──────────────────────────────── */
+.ara-op-list { display: flex; flex-direction: column; gap: 16px; flex: 1; }
+.ara-op-row { display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 1px solid #f1f4f9; }
+.ara-op-info { display: flex; flex-direction: column; gap: 4px; }
+.ara-op-name { font-size: 13px; font-weight: 700; color: #0f172a; }
+.ara-op-inv { font-size: 11.5px; color: #94a3b8; }
+.ara-op-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.ara-op-val { font-size: 13px; font-weight: 800; color: #dc2626; }
+.ara-btn-sm--danger { background: #fff; border: 1px solid #ef4444; color: #dc2626; }
+.ara-btn-sm--danger:hover { background: #ef4444; color: #fff; }
+
+.ara-op-alert { font-size: 11px; font-weight: 600; color: #d97706; background: rgba(245,166,35,0.05); border: 1px solid rgba(245,166,35,0.2); padding: 10px; border-radius: 8px; display: flex; align-items: center; gap: 6px; margin-top: 16px; }
+.ara-op-alert-icon { font-size: 14px; }

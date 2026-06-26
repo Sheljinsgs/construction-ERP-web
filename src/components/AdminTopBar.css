@@ -1,0 +1,198 @@
+/* ═══════════════════════════════════════════════════════════
+   AdminTopBar.css — Super Admin Header
+   ═══════════════════════════════════════════════════════════ */
+
+.admin-topbar {
+  height: 58px;
+  min-height: 58px;
+  background: #fff;
+  border-bottom: 1px solid #e8edf5;
+  display: flex;
+  align-items: center;
+  padding: 0 20px 0 18px;
+  gap: 12px;
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+/* ── Search ─────────────────────────────────────────────── */
+.atb-search {
+  flex: 1;
+  max-width: 440px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0 12px;
+  height: 36px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.atb-search:focus-within {
+  border-color: #f5a623;
+  box-shadow: 0 0 0 3px rgba(245,166,35,0.1);
+}
+
+.atb-search-icon { font-size: 13px; opacity: 0.5; flex-shrink: 0; }
+
+.atb-search-input {
+  flex: 1;
+  border: none;
+  background: none;
+  font-size: 12.5px;
+  color: #334155;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+}
+.atb-search-input::placeholder { color: #94a3b8; }
+
+.atb-search-kbd {
+  font-size: 10px;
+  color: #94a3b8;
+  background: #e2e8f0;
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-family: 'Inter', sans-serif;
+  flex-shrink: 0;
+}
+
+/* ── Right section ──────────────────────────────────────── */
+.atb-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+/* ── System status ──────────────────────────────────────── */
+.atb-system-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #22c55e;
+  background: rgba(34,197,94,0.08);
+  border: 1px solid rgba(34,197,94,0.2);
+  border-radius: 20px;
+  padding: 4px 12px;
+  white-space: nowrap;
+}
+
+.atb-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+  animation: pulse-g 2s infinite;
+  box-shadow: 0 0 4px #22c55e;
+}
+@keyframes pulse-g {
+  0%,100% { box-shadow: 0 0 3px #22c55e; }
+  50%      { box-shadow: 0 0 8px #22c55e; }
+}
+
+/* ── Quick Actions btn ──────────────────────────────────── */
+.atb-quick-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 14px;
+  background: linear-gradient(135deg,#f5a623,#d97706);
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 2px 8px rgba(245,166,35,0.35);
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.atb-quick-btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.atb-qa-arrow { font-size: 10px; opacity: 0.8; }
+
+/* ── Icon buttons ───────────────────────────────────────── */
+.atb-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.atb-icon-btn:hover { background: #f1f4f9; }
+
+.atb-notif-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 9.5px;
+  font-weight: 800;
+  border-radius: 10px;
+  padding: 1px 5px;
+  min-width: 16px;
+  text-align: center;
+  border: 2px solid #fff;
+}
+
+/* ── User ───────────────────────────────────────────────── */
+.atb-user {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 4px 8px 4px 4px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.atb-user:hover { background: #f8fafc; }
+
+.atb-user-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#f5a623,#d97706);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.atb-user-info { min-width: 0; }
+
+.atb-user-name {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+.atb-user-role { margin-top: 1px; }
+
+.atb-user-level {
+  font-size: 10px;
+  font-weight: 700;
+  color: #f5a623;
+  background: rgba(245,166,35,0.1);
+  padding: 1px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+
+.atb-arrow { font-size: 10px; color: #94a3b8; }
